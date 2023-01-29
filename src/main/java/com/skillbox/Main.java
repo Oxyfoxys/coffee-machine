@@ -15,13 +15,13 @@ public class Main {
             System.out.print("\nВыберете напиток:\n1.Каппучино\n2.Американо\n3.Эспрессо\nНапиток №: ");
             Scanner scanner = new Scanner(System.in);
             int select = Integer.parseInt(scanner.nextLine());
-            if (select == 1){
+            if (select == 1) {
                 System.out.println("Готовится Ваш каппучино");
                 boilWater(150);
-            } else if (select == 2){
+            } else if (select == 2) {
                 System.out.println("Готовится Ваш Американо");
                 boilWater(200);
-            } else if (select == 3){
+            } else if (select == 3) {
                 System.out.println("Готовится Ваш эспрессо");
                 boilWater(70);
             } else {
@@ -39,6 +39,7 @@ public class Main {
 
     /**
      * Метод демонстрации нагрева воды
+     *
      * @param waterBoil
      */
     public static void boilWater(int waterBoil) {
@@ -54,9 +55,10 @@ public class Main {
 
     /**
      * Метод демонстрации помола кофе
+     *
      * @param coffeeGrind
      */
-    public static void grind(int coffeeGrind){
+    public static void grind(int coffeeGrind) {
         if (coffee < 50) {
             System.out.println("Добавте зёрен!");
             return;
@@ -64,5 +66,20 @@ public class Main {
         coffee = coffee - coffeeGrind;
         System.out.println("Кофе израсходовано: " + coffeeGrind);
         System.out.println("Кофе осталось: " + coffee);
+    }
+
+    /**
+     * Метод демонстрации нагрева молока
+     *
+     * @param milkBoil расходуемое молоко
+     */
+    public static void boilMilk(int milkBoil) {
+        if (milk < 100) {
+            System.out.println("Добавте молока!");
+            return;
+        }
+        milk = milk - milkBoil;
+        System.out.println("Молока израсходовано: " + milkBoil);
+        System.out.println("Молока осталось: " + milk);
     }
 }
