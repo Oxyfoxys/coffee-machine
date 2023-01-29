@@ -2,19 +2,14 @@ package com.skillbox;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("начало программы");
-        System.out.println("Hello from main");
-        printHello();
-        System.out.println("конец программы");
+        // Алгоритм работы кофемашины
+        // 1. Нажать кнопку выбора напитка
+        // 2. Приготовление кофе
+        // 2.1 Кипятим воду
+        // 2.2 Перемалываем кофе
+        // 2.3 Делаем пенку из молока
+        // 2.4 Очистить кофемашину
+        // 3. Выдать напиток
     }
 
-    /**
-     * Метод вывода текста
-     * Пример многострочного коментария
-     */
-    public static void printHello() {
-        System.out.println("Hello from method printHello");
-    }
-
-    // Однострочный коментарий
 }
