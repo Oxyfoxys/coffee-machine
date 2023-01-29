@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     static int water = 2500;
-    int coffee = 500;
-    int milk = 1000;
+    static int coffee = 500;
+    static int milk = 1000;
 
     public static void main(String[] args) {
 
@@ -17,13 +17,13 @@ public class Main {
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 1){
                 System.out.println("Готовится Ваш каппучино");
-                boil(150);
+                boilWater(150);
             } else if (select == 2){
                 System.out.println("Готовится Ваш Американо");
-                boil(200);
+                boilWater(200);
             } else if (select == 3){
                 System.out.println("Готовится Ваш эспрессо");
-                boil(70);
+                boilWater(70);
             } else {
                 System.out.println("Такого напитка нет");
             }
@@ -41,15 +41,28 @@ public class Main {
      * Метод демонстрации нагрева воды
      * @param waterBoil
      */
-    public static void boil(int waterBoil) {
+    public static void boilWater(int waterBoil) {
         // Проверить количество воды
         if (water < 200) {
             System.out.println("Долейте воды!");
             return;
         }
-        // Кипятим 200 милилитров
         water = water - waterBoil;
         System.out.println("Воды израсходовано: " + waterBoil);
         System.out.println("Воды осталось: " + water);
+    }
+
+    /**
+     * Метод демонстрации помола кофе
+     * @param coffeeGrind
+     */
+    public static void grind(int coffeeGrind){
+        if (coffee < 50) {
+            System.out.println("Добавте зёрен!");
+            return;
+        }
+        coffee = coffee - coffeeGrind;
+        System.out.println("Кофе израсходовано: " + coffeeGrind);
+        System.out.println("Кофе осталось: " + coffee);
     }
 }
