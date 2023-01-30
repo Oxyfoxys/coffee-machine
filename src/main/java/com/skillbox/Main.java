@@ -6,6 +6,7 @@ public class Main {
     static int water = 2500;
     static int coffee = 500;
     static int milk = 1000;
+    static int sugar = 500;
 
     public static void main(String[] args) {
         while (true) {
@@ -81,5 +82,15 @@ public class Main {
         milk = milk - milkBoil;
         System.out.println("Молока израсходовано: " + milkBoil);
         System.out.println("Молока осталось: " + milk);
+    }
+    /**
+     * Метод демонстрации помола кофе
+     *
+     * @param addSugar
+     */
+    public static void add(int addSugar) {
+        sugar = sugar - addSugar;
+        System.out.println("Сахара израсходовано: " + addSugar);
+        System.out.println("Сахара осталось: " + sugar);
     }
 }
