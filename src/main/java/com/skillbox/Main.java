@@ -6,7 +6,8 @@ public class Main {
     static int water = 2500;
     static int coffee = 500;
     static int milk = 1000;
-    static int sugar = 500;
+    static int sugar = 200;
+    static int cocoa = 500;
 
     public static void main(String[] args) {
         while (true) {
@@ -19,10 +20,13 @@ public class Main {
             } if (milk < 100) {
                 System.out.println("Добавте молока!");
                 return;
+            }     else if (sugar < 10) {
+                System.out.println("Добавте зёрен!");
+                return;
             }
             // Алгоритм работы кофемашины
             // 1. Нажать кнопку выбора напитка
-            System.out.print("\nВыберете напиток:\n1.Каппучино\n2.Американо\n3.Эспрессо\nНапиток №: ");
+            System.out.print("\nВыберете напиток:\n1.Каппучино\n2.Американо\n3.Эспрессо\n4.Латте\n5.Какао\nНапиток №: ");
             Scanner scanner = new Scanner(System.in);
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 1) {
@@ -41,6 +45,16 @@ public class Main {
                 boilWater(70);
                 grind(60);
                 add(5);
+            } else if (select == 4) {
+                System.out.println("Готовится Ваш латте");
+                boilWater(50);
+                grind(40);
+                boilMilk(80);
+            } else if (select == 5) {
+                System.out.println("Готовится Ваш какао");
+                boilMilk(200);
+                sprinkle(25);
+                add(15);
             } else {
                 System.out.println("Такого напитка нет");
             }
@@ -87,7 +101,7 @@ public class Main {
         System.out.println("Молока осталось: " + milk);
     }
     /**
-     * Метод демонстрации помола кофе
+     * Метод демонстрации добавления сахара
      *
      * @param addSugar
      */
@@ -95,5 +109,15 @@ public class Main {
         sugar = sugar - addSugar;
         System.out.println("Сахара израсходовано: " + addSugar);
         System.out.println("Сахара осталось: " + sugar);
+    }
+    /**
+     * Метод демонстрации добавления сахара
+     *
+     * @param sprinkleCocoa
+     */
+    public static void sprinkle(int sprinkleCocoa) {
+        cocoa = cocoa - sprinkleCocoa;
+        System.out.println("Какао израсходовано: " + sprinkleCocoa);
+        System.out.println("Какао осталось: " + cocoa);
     }
 }
