@@ -14,16 +14,18 @@ public class Main {
             if (water < 200) {
                 System.out.println("Долейте воды!");
                 return;
-            }     else     if (coffee < 50) {
+            } else if (coffee < 50) {
                 System.out.println("Добавте зёрен!");
                 return;
-            } if (milk < 100) {
+            } else if (milk < 100) {
                 System.out.println("Добавте молока!");
                 return;
-            }     else if (sugar < 10) {
+            } else if (sugar < 10) {
                 System.out.println("Добавте зёрен!");
                 return;
             }
+            // TODO: 30.01.2023 Добавить проверку какао 
+            // TODO: 30.01.2023 Вместо постоянного вывода остатков, сделать вывод предупреждения о малом колличестве 
             // Алгоритм работы кофемашины
             // 1. Нажать кнопку выбора напитка
             System.out.print("\nВыберете напиток:\n1.Каппучино\n2.Американо\n3.Эспрессо\n4.Латте\n5.Какао\nНапиток №: ");
@@ -75,6 +77,14 @@ public class Main {
      */
     public static void boilWater(int waterBoil) {
         water = water - waterBoil;
+        for (int i = 0; i <= 100; i += 10) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Вода закипела на: " + i + "%");
+        }
         System.out.println("Воды израсходовано: " + waterBoil);
         System.out.println("Воды осталось: " + water);
     }
@@ -85,6 +95,7 @@ public class Main {
      * @param coffeeGrind
      */
     public static void grind(int coffeeGrind) {
+        // TODO: 30.01.2023 Сделать процесс помола кофе более естественным - с таймингом
         coffee = coffee - coffeeGrind;
         System.out.println("Кофе израсходовано: " + coffeeGrind);
         System.out.println("Кофе осталось: " + coffee);
@@ -96,26 +107,31 @@ public class Main {
      * @param milkBoil расходуемое молоко
      */
     public static void boilMilk(int milkBoil) {
+        // TODO: 30.01.2023 Сделать процесс кипячения молока более естественным - с тайминго
         milk = milk - milkBoil;
         System.out.println("Молока израсходовано: " + milkBoil);
         System.out.println("Молока осталось: " + milk);
     }
+
     /**
      * Метод демонстрации добавления сахара
      *
      * @param addSugar
      */
     public static void add(int addSugar) {
+        // TODO: 30.01.2023 Добавить не цикличный тайминг добавления сахара Thread.sleep();
         sugar = sugar - addSugar;
         System.out.println("Сахара израсходовано: " + addSugar);
         System.out.println("Сахара осталось: " + sugar);
     }
+
     /**
      * Метод демонстрации насыпания какао
      *
      * @param sprinkleCocoa
      */
     public static void sprinkle(int sprinkleCocoa) {
+        // TODO: 30.01.2023 Добавить не цикличный тайминг добавления кокао Thread.sleep();
         cocoa = cocoa - sprinkleCocoa;
         System.out.println("Какао израсходовано: " + sprinkleCocoa);
         System.out.println("Какао осталось: " + cocoa);
