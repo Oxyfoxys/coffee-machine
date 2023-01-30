@@ -111,7 +111,7 @@ public class Main {
         System.out.println("Сахара осталось: " + sugar);
     }
     /**
-     * Метод демонстрации добавления сахара
+     * Метод демонстрации насыпания какао
      *
      * @param sprinkleCocoa
      */
