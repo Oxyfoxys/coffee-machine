@@ -30,14 +30,17 @@ public class Main {
                 boilWater(150);
                 grind(45);
                 boilMilk(100);
+                add(15);
             } else if (select == 2) {
                 System.out.println("Готовится Ваш Американо");
                 boilWater(200);
                 grind(55);
+                add(10);
             } else if (select == 3) {
                 System.out.println("Готовится Ваш эспрессо");
                 boilWater(70);
                 grind(60);
+                add(5);
             } else {
                 System.out.println("Такого напитка нет");
             }
