@@ -140,6 +140,14 @@ public class Main {
     public static void add(int addSugar) {
         // TODO: 30.01.2023 Добавить не цикличный тайминг добавления сахара Thread.sleep();
         sugar = sugar - addSugar;
+        for (int i = 0; i <= 100; i += 10) {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("сахар насыпан" + i + "%");
+        }
         System.out.println("Сахара израсходовано: " + addSugar);
         System.out.println("Сахара осталось: " + sugar);
     }
