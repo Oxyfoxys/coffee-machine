@@ -160,6 +160,14 @@ public class Main {
     public static void sprinkle(int sprinkleCocoa) {
         // TODO: 30.01.2023 Добавить не цикличный тайминг добавления кокао Thread.sleep();
         cocoa = cocoa - sprinkleCocoa;
+        for (int i = 0; i <= 100; i += 10) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Какао насыпано на: " + i + "%");
+        }
         System.out.println("Какао израсходовано: " + sprinkleCocoa);
         System.out.println("Какао осталось: " + cocoa);
     }
