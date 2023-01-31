@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     static int water = 2500;
     static int coffee = 500;
-    static int milk = 1000;
+    static int milk = 1500;
     static int sugar = 200;
     static int cocoa = 500;
 
@@ -22,6 +22,9 @@ public class Main {
                 return;
             } else if (sugar < 10) {
                 System.out.println("Добавте зёрен!");
+                return;
+            } else if (cocoa < 25){
+                System.out.println("Добавте какао!");
                 return;
             }
             // TODO: 30.01.2023 Добавить проверку какао 
@@ -55,7 +58,7 @@ public class Main {
             } else if (select == 5) {
                 System.out.println("Готовится Ваш какао");
                 boilMilk(200);
-                sprinkle(25);
+                sprinkle(35);
                 add(15);
             } else {
                 System.out.println("Такого напитка нет");
@@ -97,6 +100,14 @@ public class Main {
     public static void grind(int coffeeGrind) {
         // TODO: 30.01.2023 Сделать процесс помола кофе более естественным - с таймингом
         coffee = coffee - coffeeGrind;
+        for (int i = 0; i <= 100; i += 10) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Кофе перемолот на: " + i + "%");
+        }
         System.out.println("Кофе израсходовано: " + coffeeGrind);
         System.out.println("Кофе осталось: " + coffee);
     }
@@ -109,6 +120,14 @@ public class Main {
     public static void boilMilk(int milkBoil) {
         // TODO: 30.01.2023 Сделать процесс кипячения молока более естественным - с тайминго
         milk = milk - milkBoil;
+        for (int i = 0; i <= 100; i += 10) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Молоко закипело на: " + i + "%");
+        }
         System.out.println("Молока израсходовано: " + milkBoil);
         System.out.println("Молока осталось: " + milk);
     }
